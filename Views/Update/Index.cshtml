@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Update Application";
+}
+
+<main class="container">
+    <div class="card">
+        <h2>Update Application</h2>
+
+        <form>
+            <div class="form-group">
+                <label class="form-label">Currently Editing:</label>
+                <div class="current-record">
+                    <strong>TechCorp Inc.</strong> - Software Developer Intern (Applied: 2025-06-15)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="company" class="form-label">Company Name</label>
+                <input type="text" id="company" class="form-input" value="TechCorp Inc." required>
+            </div>
+
+            <div class="form-group">
+                <label for="position" class="form-label">Position Title</label>
+                <input type="text" id="position" class="form-input" value="Software Developer Intern" required>
+            </div>
+
+            <div class="form-group">
+                <label for="appDate" class="form-label">Application Date</label>
+                <input type="date" id="appDate" class="form-input" value="2025-06-15" required>
+            </div>
+
+            <div class="form-group">
+                <label for="status" class="form-label">Status</label>
+                <select id="status" class="form-input" required>
+                    <option value="applied">Applied</option>
+                    <option value="interview" selected>Interview Scheduled</option>
+                    <option value="offer">Offer Received</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="notes" class="form-label">Notes</label>
+                <textarea id="notes" class="form-input" rows="3">Technical interview scheduled for June 25th with engineering team.</textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn">Save Changes</button>
+                <a href="~/Read/Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</main>
