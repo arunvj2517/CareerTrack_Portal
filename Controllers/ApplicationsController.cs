@@ -147,13 +147,18 @@ namespace MyMvcApp.Controllers
         // GET: Applications/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id == null) return NotFound();
+            if (id == null)
+            {
+                return NotFound();
+            }
 
             var application = await _context.Applications
                 .Include(a => a.Student)
                 .FirstOrDefaultAsync(m => m.ApplicationId == id);
-
-            if (application == null) return NotFound();
+            if (application == null)
+            {
+                return NotFound();
+            }
 
             return View(application);
         }
@@ -172,6 +177,7 @@ namespace MyMvcApp.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
 
         private bool ApplicationExists(string id)
         {
