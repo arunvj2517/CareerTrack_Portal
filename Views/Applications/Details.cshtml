@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MyMvcApp.Models.Application>
+
+@{
+    ViewData["Title"] = "Your Applications";
+}
+
+<main class="container">
+    <div class="card">
+        <h2>Your Applications</h2>
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Position</th>
+                        <th>Date Applied</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.CompanyName</td>
+                            <td>@item.PositionTitle</td>
+                            <td>@item.ApplicationDate.ToString("yyyy-MM-dd")</td>
+                            <td><span class="status-badge">@item.Status</span></td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ApplicationId" class="btn btn-sm">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@item.ApplicationId" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-actions">
+            <a asp-action="Create" class="btn">+ Add New Application</a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Student Internship & Job App System</p>
+    </div>
+</footer>

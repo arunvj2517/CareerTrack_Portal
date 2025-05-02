@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Progress Tracker";
+}
+
+<main>
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <h2>Internship & Job Application Insights</h2>
+        <p>
+            This dashboard provides a comprehensive overview of student internship and job application trends.
+            Visualizations below highlight key metrics such as the number of applications per role, application
+            outcomes, monthly application trends, and internship patterns across various fields.
+        </p>
+    </section>
+
+    <!-- Row 1: Bar + Pie -->
+    <section>
+        <h3>Applications Overview</h3>
+        <div class="chart-row app-overview-row">
+            <div class="chart-box center-box">
+                <canvas id="centerPieChart"></canvas>
+                <p class="chart-description">
+                    This pie chart visualizes how internship applications are distributed across different roles.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Row 2: Line + Scatter -->
+    <section>
+        <h3>Performance Metrics</h3>
+        <div class="chart-row two-cols">
+            <div class="chart-box">
+                <canvas id="lineChart"></canvas>
+                <p class="chart-description">
+                    The line chart illustrates monthly trends in internship applications, helping identify seasonal peaks in student activity.
+                </p>
+            </div>
+            <div class="chart-box">
+                <canvas id="scatterChart"></canvas>
+                <p class="chart-description">
+                    This scatter plot compares the duration and monthly stipend of internships across different departments such as IT, Marketing, and Finance.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+@section Scripts {
+<script src="~/javascript/chart.js"></script>
+}

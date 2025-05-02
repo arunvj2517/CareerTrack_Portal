@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<main class="container">
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login to Your Account</h2>
+            <form asp-action="Login" method="post">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">
+                        <input type="checkbox" name="remember" /> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div class="links">
+                <p><a href="#">Forgot Password?</a></p>
+                <p><a asp-controller="Home" asp-action="Index">Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+</main>

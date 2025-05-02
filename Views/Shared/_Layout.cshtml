@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CareerTrack Portal</title>
+
+    <link rel="stylesheet" href="~/css/project.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+    <!-- Header (shared across all pages) -->
+    <header>
+        <div class="container">
+            <h1>CareerTrack Portal</h1>
+
+            <button class="hamburger-menu" aria-label="Toggle navigation" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </button>
+
+            <nav class="header-nav">
+                <a href="~/Home/Index" class="nav-link" style="color: white; text-decoration: none; display: inline-flex; align-items: center; font-size: 16px; font-weight: 700;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#1d4ed8" style="margin-right: 4px;">
+                        <path d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a1 1 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm9-8.586 6 6V15l.001 5H6v-9.586l6-6z" />
+                    </svg>
+                    Home
+                </a>
+                <div class="dropdown" aria-haspopup="true">
+                    <button class="dropbtn" aria-expanded="false">Manage Applications</button>
+                    <div class="dropdown-content" aria-label="Application management submenu">
+                        <a href="~/Create">Create</a>
+                        <a href="~/Read">View</a>
+                        <a href="~/Update">Update</a>
+                        <a href="~/Delete">Delete</a>
+                    </div>
+                </div>
+                <a href="~/Visualizations">Progress Tracker</a>
+                <a href="~/About">About Us</a>
+                <a href="~/Login" class="login-link">
+                    Login
+                    <img src="~/images/user_login.png" alt="login logo" />
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CareerTrack Portal | Built by Team 5</p>
+        </div>
+    </footer>
+
+    <script src="~/javascript/chart.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
